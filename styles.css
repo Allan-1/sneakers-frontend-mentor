@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Roboto:wght@300;400;700&display=swap');
+
+:root{
+    /* colors */
+
+    --orange: hsl(26, 100%, 55%);
+    --pale-orange: hsl(25, 100%, 94%);
+    --very-dark-blue: hsl(220, 13%, 13%);
+    --dark-grayish-blue: hsl(219, 9%, 45%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --light-grayish-blue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    /* fonts */
+    --fruktur: 'Fruktur', cursive;
+    --roboto: 'Roboto', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--roboto);
+}
+
+/* navigation bar */
+.nav-bar{
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 3rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--grayish-blue);
+}
+.nav-bar .nav-item{
+    display: flex;
+}
+.nav-bar .nav-links a{
+    margin-left: 1.6rem;
+    text-decoration: none;
+    color: var(--dark-grayish-blue);
+}
+.nav-bar .nav-links a:first-child{
+    margin-left: 2.5rem;
+}
+.nav-bar .nav-links a:focus{
+    border-bottom: 3px solid var(--orange);
+    padding-bottom: 2.1rem;
+}
+.nav-bar .nav-profile{
+    display: flex;
+}
+.nav-bar .nav-profile img{
+    object-fit: contain;
+    margin-right: 1.7rem;
+    cursor: pointer;
+}
+.nav-bar .nav-profile .profile-image{
+    width: 39px;
+}
+/* main page */
+.main{
+    display: flex;
+    margin: 1.3rem 8.5rem 0;
+}
+.image-container > img{
+    object-fit: contain;
+    width: 420px;
+    border-radius: 15px;
+    margin: 0.5rem 3rem;
+}
+.thumbnails{
+    display: flex;
+    justify-content: space-evenly;
+}
+.thumbnails img{
+    object-fit: contain;
+    width: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.content-container{
+    margin-top: 4.5rem;
+    width: 25rem;
+}
+.content-container .company-title{
+    font-weight: 700;
+    color: var(--orange);
+    font-size: 13px;
+    margin-bottom: 0.7rem;
+}
+.content-container .title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 1.6rem;
+}
+.content-container .description{
+    color: var(--dark-grayish-blue);
+    margin-bottom: 1.6rem;
+}
+.price-container{
+    margin-bottom: 1.6rem;
+}
+.price-container .price{
+    color: var(--orange);
+    font-weight: bold;
+}
+.price-container .price .actual{
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-right: 1rem;
+}
+.price-container .prev-price{
+    color: var(--grayish-blue);
+    font-weight: 700;
+    text-decoration: line-through;
+}
+.cart-container{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-container .item-count{
+    display: flex;
+}
+.cart-container .item-count button{
+    margin: 0 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.cart-container .item-count button:first-child{
+    margin-left: 0;
+}
+.cart-container .item-count div{
+    font-weight: 700;
+    align-self: center;
+}
+.cart-container .cart-button, .checkout{
+    background-color: var(--orange);
+    cursor: pointer;
+    padding: 0.7rem 3rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    text-align: center;
+}
+.cart-container .cart-button img{
+    margin-right: 10px;
+}
+
+/* cart */
+.cartitem{
+    background-color: var(--white);
+    box-shadow: 10px 10px 50px var(--grayish-blue);
+    width: 20rem;
+    padding: 1.2rem 0.7rem;
+    border-radius: 9px;
+    position: absolute;
+    top: 72px;
+    right: 55px;
+    visibility: hidden;
+}
+.cartitem .title{
+    font-weight: 700;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--grayish-blue);
+}
+.itemlist{
+    display: flex;
+    margin: 0.7rem 0;
+}
+.itemlist img{
+    object-fit: contain;
+    width: 50px;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+.itemlist .item-title{
+    color: var(--dark-grayish-blue);
+}
+.itemlist .amount{
+    color: var(--dark-grayish-blue);
+}
+.itemlist .amount .total{
+    color: var(--black);
+    font-weight: bold;
+}
+/* conditional styles */
+.visible{
+    visibility: visible;
+}
