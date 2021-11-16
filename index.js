@@ -4,9 +4,11 @@ const add = document.getElementById('plus');
 const quantity = document.getElementById('quanti')
 // total items to be added on cart
 const itemquantity = document.getElementById('quantity')
+const totalamount = document.getElementById('totalamt')
 const addCartButton = document.getElementById('addcart')
 const cartIconButton = document.getElementById('carticon')
 const cartItem = document.getElementById('cartitem')
+const emptyCartItem = document.getElementById('cartitemempty')
 
 let quantityAmount = parseInt(quantity.innerText)
 
@@ -32,11 +34,15 @@ subtract.addEventListener('click', () => {
 })
 
 addCartButton.addEventListener('click', ()=>{
-    itemlists.push({quantityAmount})
-    console.log(itemlists)
+    if(quantityAmount != 0){
+        itemlists.push({quantityAmount})
+        itemquantity.innerText = itemlists[0].quantityAmount
+    }
 })
 
 cartIconButton.addEventListener('click', ()=>{
-    // cartItem.style.visibility = 'visible'
+    if(itemlists.length === 0){
+        emptyCartItem.classList.toggle('visible')
+    }
     cartItem.classList.toggle('visible')
 })

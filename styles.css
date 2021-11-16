@@ -149,7 +149,7 @@
 }
 
 /* cart */
-.cartitem{
+.cartitem, .cartitemempty{
     background-color: var(--white);
     box-shadow: 10px 10px 50px var(--grayish-blue);
     width: 20rem;
@@ -160,7 +160,11 @@
     right: 55px;
     visibility: hidden;
 }
-.cartitem .title{
+.cartitemempty{
+    /* visibility: visible; */
+    height: 11.8rem;
+}
+.cartitem .title, .cartitemempty .title{
     font-weight: 700;
     padding-bottom: 0.9rem;
     border-bottom: 1px solid var(--grayish-blue);
