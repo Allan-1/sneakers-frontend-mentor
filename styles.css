@@ -189,6 +189,19 @@
     color: var(--black);
     font-weight: bold;
 }
+.incart{
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 0.2rem;
+    height: 23px;
+    width: 23px;
+    border-radius: 40%;
+    text-align: center;
+    position: relative;
+    left: 30px;
+    bottom: 5px;
+    visibility: hidden;
+}
 /* conditional styles */
 .visible{
     visibility: visible;
