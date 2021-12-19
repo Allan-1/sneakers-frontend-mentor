@@ -12,6 +12,8 @@ const cartItem = document.getElementById('cartitem')
 const emptyCartItem = document.getElementById('cartitemempty')
 const incart = document.getElementById('incart');
 
+const mainSection = document.querySelector('.main')
+
 let quantityAmount = parseInt(quantity.innerText)
 
 const itemlists = [];
@@ -51,4 +53,8 @@ cartIconButton.addEventListener('click', ()=>{
         emptyCartItem.classList.toggle('visible')
     }
     cartItem.classList.toggle('visible')
+})
+
+mainSection.addEventListener('click', ()=>{
+    cartItem.classList.remove('visible')
 })

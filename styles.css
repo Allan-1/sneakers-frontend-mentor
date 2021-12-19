@@ -121,6 +121,9 @@
 }
 .cart-container .item-count{
     display: flex;
+    background-color: var(--light-grayish-blue);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
 }
 .cart-container .item-count button{
     margin: 0 2rem;
@@ -130,6 +133,9 @@
 }
 .cart-container .item-count button:first-child{
     margin-left: 0;
+}
+.cart-container .item-count button:last-child{
+    margin-right: 0;
 }
 .cart-container .item-count div{
     font-weight: 700;
