@@ -11,12 +11,25 @@ const cartIconButton = document.getElementById('carticon')
 const cartItem = document.getElementById('cartitem')
 const emptyCartItem = document.getElementById('cartitemempty')
 const incart = document.getElementById('incart');
+const imagethumbnails = document.querySelectorAll('#img-thumbs')
+
+// modal
+const modal = document.getElementById('modal')
+const closemodal = document.getElementById('close-modal')
+const overlay = document.getElementById('overlay')
+
+// courasel
+const next = document.getElementById('next')
+const previous = document.getElementById('prev')
+const imagebox = document.getElementById('courasel-img')
 
 const mainSection = document.querySelector('.main')
 
 let quantityAmount = parseInt(quantity.innerText)
 
 const itemlists = [];
+
+const imagelist = ['image-product-1', 'image-product-2', 'image-product-3', 'image-product-4']
 
 
 nav_links.forEach((elem) => {
@@ -57,4 +70,36 @@ cartIconButton.addEventListener('click', ()=>{
 
 mainSection.addEventListener('click', ()=>{
     cartItem.classList.remove('visible')
+})
+
+imagethumbnails.forEach(button => button.addEventListener('click', ()=>{
+    modal.classList.add('visible');
+    overlay.classList.add('overlay')
+}))
+
+closemodal.addEventListener('click', ()=>{
+    modal.classList.remove('visible')
+    overlay.classList.remove('overlay')
+})
+
+// image index
+let index = 0
+
+next.addEventListener('click', ()=>{
+    index += 1
+    if(index < imagelist.length){
+        imagebox.setAttribute('src', 'images/'+imagelist[index]+'.jpg')
+    }else{
+        index = 0
+        imagebox.setAttribute('src', 'images/'+imagelist[index]+'.jpg')
+    }
+})
+previous.addEventListener('click', ()=>{
+    index -= 1
+    if(index >= 0){
+        imagebox.setAttribute('src', 'images/'+imagelist[index]+'.jpg') 
+    }else{
+        index = imagelist.length -1
+        imagebox.setAttribute('src', 'images/'+imagelist[index]+'.jpg') 
+    }
 })
