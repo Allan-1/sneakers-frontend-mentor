@@ -119,6 +119,11 @@
     display: flex;
     justify-content: space-between;
 }
+.discs{
+    background-color: hsl(26, 61%, 85%);
+    padding: 0.4rem;
+    border-radius: 8px;
+}
 .cart-container .item-count{
     display: flex;
     background-color: var(--light-grayish-blue);
